@@ -1,7 +1,11 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/vyah/.oh-my-zsh"
+export ZSH="/Users/<user>/.oh-my-zsh"
+
+export LANG=en_US.UTF-8
+
+export PYTHON_CONFIGURE_OPTS="--enable-framework"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -11,6 +15,13 @@ ZSH_THEME="robbyrussell"
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 eval "$(pyenv init -)"
 eval $(thefuck --alias)
+
+# For compilers to find zlib you may need to set:
+export LDFLAGS="${LDFLAGS} -L/usr/local/opt/zlib/lib"
+export CPPFLAGS="${CPPFLAGS} -I/usr/local/opt/zlib/include"
+
+# For pkg-config to find zlib you may need to set:
+export PKG_CONFIG_PATH="${PKG_CONFIG_PATH} /usr/local/opt/zlib/lib/pkgconfig"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -69,15 +80,17 @@ plugins=(
   python
   pip
   pyenv
-  pyats
-  easypy
-  pem
   brew
   vim-interaction
   pylint
   ruby
-  docker
+  docker 
+  docker-compose
+  zsh-completions
 )
+
+autoload -U compinit && compinit
+zmodload -i zsh/complist
 
 source $ZSH/oh-my-zsh.sh
 
@@ -116,13 +129,40 @@ alias egrep='egrep --color=always'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -l'
-alias vpn-up='/Users/vyah/vpn-lab/bin/vpn start'
-alias vpn-down='/Users/vyah/vpn-lab/bin/vpn stop'
-alias vpn-status='/Users/vyah/vpn-lab/bin/vpn status'
-alias vpn-restart='/Users/vyah/vpn-lab/bin/vpn restart'
+alias vpn-up='/Users/<user>/vpn-lab/bin/vpn start'
+alias vpn-down='/Users/<user>/vpn-lab/bin/vpn stop'
+alias vpn-status='/Users/<user>/vpn-lab/bin/vpn status'
+alias vpn-restart='/Users/<user>/vpn-lab/bin/vpn restart'
 alias git-lg='git log --pretty=oneline'
+alias git-amend='git commit --amend --no-edit'
+alias git-master='git checkout master'
+alias git-s="git status"
+alias git-p="git pull"
+alias git-f="git push -f"
+alias git-c="git checkout -b"
+alias git-h="git reset --hard"
+alias git-i="git commit --interactive"
 alias git-all='git add . && git commit'
+alias git-r='git rebase -i @~10'
 alias sshp='ssh-keygen -f ~/.ssh/known_hosts -R'
 alias weather='curl wttr.in/Lviv'
 alias piiing='ping 8.8.8.8'
+alias sw_deploy_list='sw_deploy -l --output table'
+alias please='sudo'
 
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
+
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# Created by `userpath` on 2019-09-29 18:57:39
+export PATH="$PATH:/Users/<user>/.local/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 
 # Run something, muting output or redirecting it to the debug stream
 # depending on the value of _ARC_DEBUG.
@@ -10,7 +8,6 @@ __python_argcomplete_run() {
         "$@" 8>&1 9>&2 1>&9 2>&1
     fi
 }
-
 
 _python_argcomplete() {
     local IFS=$'\013'
@@ -34,7 +31,6 @@ _python_argcomplete() {
 }
 complete -o nospace -o default -F _python_argcomplete "pytest"
 
-
 # Run something, muting output or redirecting it to the debug stream
 # depending on the value of _ARC_DEBUG.
 __python_argcomplete_run() {
@@ -44,7 +40,6 @@ __python_argcomplete_run() {
         "$@" 8>&1 9>&2 1>&9 2>&1
     fi
 }
-
 
 _python_argcomplete() {
     local IFS=$'\013'
@@ -67,3 +62,10 @@ _python_argcomplete() {
     fi
 }
 complete -o nospace -o default -F _python_argcomplete "pytest"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
