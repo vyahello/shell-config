@@ -1,13 +1,18 @@
 # Shell config
-My useful shell (`bashrc`, `zshrc` and `vimrc`) configuration files for system. Enjoy it!
+My useful shell (`bashrc`, `zshrc` and `vimrc`) configuration files/scripts for system. Enjoy it!
 
 # Usage
 
 ## Setup
 
-Please put all config scripts into the root of your home directory e.g:
+Please put shell configs into the root of your home directory e.g:
 ```shell script
 mv <dot-config> ~/
+```
+
+Please put shell scripts into `/usr/local/bin` directory:
+```shell script
+mv text_to_log /usr/local/bin
 ```
 
 ## Contributing
