@@ -1,20 +1,13 @@
 # Shell config
-Useful shell (bash, zsh) configuration files for system. Enjoy it!
+My useful shell (`bashrc`, `zshrc` and `vimrc`) configuration files for system. Enjoy it!
 
 # Usage
 
-## Bash config
+## Setup
 
-Please put all `bash` scripts into the root of your home directory.
+Please put all config scripts into the root of your home directory e.g:
 ```shell script
-~ mv .bash_profile .bashrc ~/
-```
-
-## Zsh config
-Please put all `.zshrc` script into the root of your home directory.
-
-```shell script
-~ mv .zshrc ~/
+mv <dot-config> ~/
 ```
 
 ## Contributing
