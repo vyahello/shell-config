@@ -12,7 +12,7 @@ mv <dot-config> ~/
 
 Please put shell scripts into `/usr/local/bin` directory:
 ```shell script
-mv text_to_log /usr/local/bin
+mv <script> /usr/local/bin
 ```
 
 ## Contributing

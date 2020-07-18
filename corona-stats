@@ -1,0 +1,9 @@
+#!/bin/bash
+
+
+corona-stats() {
+    curl https://corona-stats.online/
+}
+
+
+corona-stats

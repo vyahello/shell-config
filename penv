@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+
+install-requirements() {
+    pip install -r requirements.txt && pip install -r requirements-dev.txt 
+}
+
+
+create-pem-environment() {
+    pem create-dir-venv $1
+}
+
+
+upgrade-tools() {
+    pip install --upgrade pip setuptools
+}
+
+
+setup-virtual-environment() {
+    create-pem-environment $1 && upgrade-tools
+    [[ $2 == "--install" ]] && install-requirements 
+}
+
+
+setup-virtual-environment $@
