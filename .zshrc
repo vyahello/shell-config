@@ -1,7 +1,7 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-# export ZSH="/Users/<user>/.oh-my-zsh"
+export ZSH="/Users/volodymyr.yahello/.oh-my-zsh"
 
 export LANG=en_US.UTF-8
 
@@ -131,6 +131,10 @@ alias egrep='egrep --color=always'
 alias ll='ls -alFh'
 alias la='ls -A'
 alias l='ls -l'
+alias vpn-up='/Users/volodymyr.yahello/vpn-lab/bin/vpn start'
+alias vpn-down='/Users/volodymyr.yahello/vpn-lab/bin/vpn stop'
+alias vpn-status='/Users/volodymyr.yahello/vpn-lab/bin/vpn status'
+alias vpn-restart='/Users/volodymyr.yahello/vpn-lab/bin/vpn restart'
 alias git-lg='git log --pretty=oneline'
 alias git-amend='git commit --amend --no-edit'
 alias git-master='git checkout master'
@@ -145,10 +149,13 @@ alias git-r='git rebase -i @~10'
 alias sshp='ssh-keygen -f ~/.ssh/known_hosts -R'
 alias weather='curl wttr.in/Lviv'
 alias piiing='ping 8.8.8.8'
+alias sw_deploy_list='sw_deploy -l --output table'
 alias please='sudo'
 alias cat='lolcat'
 alias openvpn='/usr/local/Cellar/openvpn/2.4.8/sbin/openvpn'
 alias loadnvm=". /usr/local/opt/nvm/nvm.sh"
+alias docker-compose="/usr/local/Cellar/docker-compose/1.29.2/bin/docker-compose"
+alias scpi="scp -i /Users/volodymyr.yahello/.ssh/id_rsa_gerrit"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
@@ -160,6 +167,9 @@ export PATH="/usr/local/opt/tcl-tk/bin:$PATH"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# Created by `userpath` on 2019-09-29 18:57:39
+export PATH="$PATH:/Users/volodymyr.yahello/.local/bin"
 
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -173,8 +183,6 @@ autoload -U promptinit; promptinit
 # pip
 eval "`pip completion --zsh`"
 
-export PI_PASS="Automaton?123456789"
-
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -184,10 +192,12 @@ fi
 
 eval "$(pyenv virtualenv-init -)"
 
-export GITHUB_AUTOMATON_TOKEN=e91ac50b1d78171e918841ac91d82bd92980dbfe
-export RPI_NETWORK_MODULE=nmcli
-
-
 zstyle ':completion:*' menu select
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export PATH="/usr/local/opt/bison/bin:$PATH"
+export PATH="/usr/local/opt/flex/bin:$PATH"
+export PATH="/usr/local/opt/flex/bin:$PATH"
+
+eval "$(pyenv init -)"
