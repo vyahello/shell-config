@@ -1,0 +1,20 @@
+Host testhome
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_rsa_home
+
+Host testring
+ HostName github.com
+ User git
+ IdentityFile ~/.ssh/id_rsa_ring
+
+Host r-gerrit.lab.net 
+ HostName r-gerrit.lab.net 
+ Port 9418
+ User volodymyr.yahello
+ IdentityFile ~/.ssh/id_rsa_gerrit
+
+Host gitlab 
+ HostName gitlab.svc.team.com 
+ User volodymyr.yahello
+ IdentityFile ~/.ssh/id_rsa_gitlab
